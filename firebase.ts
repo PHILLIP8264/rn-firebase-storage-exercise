@@ -1,12 +1,22 @@
 import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 
-// Replace the following with your app's Firebase project configuration
-// See: https://support.google.com/firebase/answer/7015592
+// Firestore storage is still down
 const firebaseConfig = {
-    // TODO ... YOUR FIREBASE_CONFIGURATION
+  apiKey: "AIzaSyCw53j3ZqBAQFO_aiMIOebFRK8UxNiGMzA",
+  authDomain: "class-activeties.firebaseapp.com",
+  projectId: "class-activeties",
+  storageBucket: "class-activeties.firebasestorage.app",
+  messagingSenderId: "253070327629",
+  appId: "1:253070327629:web:a69f6644fe7145909cc104",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// TODO: Initialize Cloud Firestore, Cloud Storage and get a reference to the service
+// Initialize Cloud Firestore and get a reference to the service
+export const db = getFirestore(app);
+
+// Initialize Cloud Storage and get a reference to the service
+export const storage = getStorage(app);
